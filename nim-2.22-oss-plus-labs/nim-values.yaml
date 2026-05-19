@@ -7,9 +7,6 @@ nmsClickhouse:
 networkPolicies:
   enabled: false
 
-log:
-  level: info
-
 apigw:
   service:
     type: LoadBalancer
@@ -17,4 +14,29 @@ apigw:
 
   image:
     repository: private-registry.nginx.com/nms/apigw
+    tag: 2.22.0
+
+core:
+  image:
+    repository: private-registry.nginx.com/nms/core
+    tag: 2.22.0
+
+dpm:
+  image:
+    repository: private-registry.nginx.com/nms/dpm
+    tag: 2.22.0
+
+ingestion:
+  image:
+    repository: private-registry.nginx.com/nms/ingestion
+    tag: 2.22.0
+
+integrations:
+  image:
+    repository: private-registry.nginx.com/nms/integrations
+    tag: 2.22.0
+
+secmon:
+  image:
+    repository: private-registry.nginx.com/nms/secmon
     tag: 2.22.0
