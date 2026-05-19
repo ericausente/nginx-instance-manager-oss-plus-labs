@@ -1,0 +1,20 @@
+imagePullSecrets:
+  - name: regcred
+
+nmsClickhouse:
+  mode: disabled
+
+networkPolicies:
+  enabled: false
+
+log:
+  level: info
+
+apigw:
+  service:
+    type: LoadBalancer
+    httpsPort: 443
+
+  image:
+    repository: private-registry.nginx.com/nms/apigw
+    tag: 2.22.0

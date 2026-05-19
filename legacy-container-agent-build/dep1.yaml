@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-agent
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: nginx-agent
+  template:
+    metadata:
+      labels:
+        app: nginx-agent
+    spec:
+      containers:
+      - name: nginx-agent
+        image: ausente/agent_ubuntu_22.04:v1.0
+        args:
+        - --server-host=<NIM_HOST>
+        - --server-grpcport=443
+        - --tls-enable
+        - --tls-skip-verify
+        ports:
+        - containerPort: 80
+        - containerPort: 443
+        - containerPort: 8081
